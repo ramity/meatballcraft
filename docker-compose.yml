@@ -1,0 +1,22 @@
+services:
+
+  minecraft:
+    build:
+      context: ./
+      dockerfile: docker/minecraft/Dockerfile
+    container_name: meatballcraft
+    image: meatballcraft
+    ports:
+      - 25566:25565
+    environment:
+      EULA: True
+      MAX_MEMORY: 24G
+      TYPE: CURSEFORGE
+      CF_SERVER_MOD: /modpacks/Meatballcraft-Server-beta-0.16.5-hotfix3.zip
+    volumes:
+    - ./data:/data
+    - ./modpacks:/modpacks:ro
+
+networks:
+  default:
+    name: meatballcraft_network
