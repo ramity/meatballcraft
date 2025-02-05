@@ -7,7 +7,7 @@ docker compose up -d
 # Sending commands
 
 ```
-docker exec meatballcraft mc-send-to-console # command goes here
+docker exec meatballcraft rcon-cli # mc command goes here
 ```
 
 # Backing up
